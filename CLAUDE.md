@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Aprender construindo. O projeto segue o que está proposto em `context.md`: evoluir o agente de `Agente_de_IA_Minimalista.ipynb` (tool de análise temporal, novo mockup de métricas, avaliação, porte para outra LLM e inovação). A entrega importa, mas o foco principal é entender cada passo e saber explicá-lo na apresentação e nas perguntas.
+Aprender construindo. O projeto segue o que está proposto em `assets/context.md`: evoluir o agente de `assets/Agente_de_IA_Minimalista.ipynb` (tool de análise temporal, novo mockup de métricas, avaliação, porte para outra LLM e inovação). A entrega importa, mas o foco principal é entender cada passo e saber explicá-lo na apresentação e nas perguntas.
 
 ## Regras de resposta
 
