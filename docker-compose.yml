@@ -1,0 +1,16 @@
+services:
+  app:
+    build: ./app
+    ports:
+      - "3000:3000"
+    mem_limit: 512m
+    memswap_limit: 512m
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3.6.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    restart: unless-stopped
