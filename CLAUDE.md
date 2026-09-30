@@ -10,6 +10,7 @@ Aprender construindo. O projeto segue o que está proposto em `assets/context.md
 - Sempre com viés de aprendizado: explicar o porquê de cada passo, não só o como.
 - Um conceito por vez. Passos pequenos, sem despejar notebooks ou blocos grandes de código de uma vez.
 - Não usar travessões (— ou –). Usar dois-pontos ou ponto.
+- YAGNI: fazer só o que foi pedido agora. Menos é mais, mas o simples bem feito. Sem abstração, parâmetro, flag ou estrutura extra criada "para o futuro".
 
 ## Fluxo de trabalho
 
