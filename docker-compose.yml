@@ -6,6 +6,23 @@ services:
     mem_limit: 512m
     memswap_limit: 512m
     restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://notes:notes@db:5432/notes
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: notes
+      POSTGRES_PASSWORD: notes
+      POSTGRES_DB: notes
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U notes"]
+      interval: 2s
+      retries: 10
+    restart: unless-stopped
 
   prometheus:
     image: prom/prometheus:v3.6.0
