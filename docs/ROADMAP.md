@@ -2,16 +2,16 @@
 
 Evoluir o agente de `assets/Agente_de_IA_Minimalista.ipynb` conforme `assets/context.md`, trocando o mockup de métricas por um laboratório real em Docker Compose.
 
-O porquê de cada escolha está em `ADR.md`.
-
 ## Tarefas
 
 ### Laboratório
 
-- [ ] App em Node.js com Express: `/liveness` sem banco, `/readiness` com banco, rota que consulta o banco e rota mais botão que dispara o vazamento
-- [ ] Expor a métrica de memória do app para o Prometheus
-- [ ] Compose com app, Postgres, Prometheus e Grafana
-- [ ] Limite de memória no container do app, para o OOM kill acontecer
+- [x] App em Node.js com Express: `/liveness` e rota que dispara o vazamento
+- [ ] `/readiness` com banco, rota que consulta o banco e botão no front
+- [x] Expor a métrica de memória do app para o Prometheus
+- [x] Compose com app e Prometheus coletando de 1 em 1 segundo
+- [ ] Adicionar Postgres e Grafana ao compose
+- [x] Limite de memória no container do app
 - [ ] Dashboard mínimo no Grafana
 
 ### Agente
@@ -35,4 +35,4 @@ O porquê de cada escolha está em `ADR.md`.
 - 7 pontos: os quatro itens pedidos no `context.md`
 - 3 pontos de inovação: laboratório real no lugar do mockup, extrapolação determinística no Prometheus e redução de token na consulta da série
 
-Roteiro da demo: aperta o botão, o gráfico sobe, o app cai e reinicia, o agente aponta o vazamento usando a série. Depois `docker stop` no Postgres e o agente aponta a conexão usando o log.
+Roteiro da demo: aperta o botão, o gráfico sobe, e com o app ainda vivo o agente prevê o estouro pela série. Depois `docker stop` no Postgres e o agente aponta a conexão usando o log. O OOM kill acontece sozinho no fundo e confirma a previsão.
